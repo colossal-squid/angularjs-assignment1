@@ -1,0 +1,17 @@
+<div ng-controller="CustomerEditController as ctrl" class="container">
+
+    <h2>{{::ctrl.i18n('customer.details')}}</h2>
+    <customer-form
+            customer-form-mode="{{ctrl.constants.customerFormModes.EDIT}}"
+            customer-model="ctrl.data"
+            is-valid="ctrl.isValid">
+    </customer-form>
+
+    <button ng-click="ctrl.update()" ng-disabled="!ctrl.isValid" type="submit" class="btn btn-primary">
+        {{::ctrl.i18n('save')}}
+    </button>
+    <button ng-click="ctrl.cancel()" type="button" class="btn btn-default">
+        {{::ctrl.i18n('cancel')}}
+    </button>
+
+</div>

@@ -1,0 +1,16 @@
+<div ng-controller="CustomerCreateController as ctrl" class="container">
+    <h2>{{::ctrl.i18n('customer.addNew')}}</h2>
+    <customer-form
+            customer-form-mode="{{ctrl.constants.customerFormModes.CREATE}}"
+            customer-model="ctrl.model"
+            is-valid="ctrl.isValid"
+    ></customer-form>
+
+    <button ng-click="ctrl.create()" ng-disabled="!ctrl.isValid" type="submit" class="btn btn-success">
+        {{::ctrl.i18n('create')}}
+    </button>
+    <button ng-click="ctrl.cancel()" type="button" class="btn btn-default">
+        {{::ctrl.i18n('cancel')}}
+    </button>
+
+</div>

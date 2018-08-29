@@ -1,0 +1,23 @@
+<div ng-controller="NavigationDataController as ctrl">
+
+    <h2>{{::ctrl.i18n('navigation.data.for')}} {{::ctrl.name}}</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <th>{{::ctrl.i18n('navigationData.page')}}</th>
+        <th>{{::ctrl.i18n('navigationData.timestamp')}}</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in ctrl.data">
+            <td>{{::item.page}}</td>
+            <td>{{::item.timestamp}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button type="button" ng-click="ctrl.back()" class="btn btn-primary"
+            ng-click="ctrl.create()">
+        {{::ctrl.i18n('back.to.overview')}}
+    </button>
+
+</div>

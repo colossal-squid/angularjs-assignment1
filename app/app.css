@@ -1,0 +1,2 @@
+/* @see https://angular-ui.github.io/bootstrap/ Basically this fixes cursor for anchors with no href */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

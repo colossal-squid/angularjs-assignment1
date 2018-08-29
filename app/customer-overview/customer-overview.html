@@ -1,0 +1,31 @@
+<div ng-controller="CustomerViewController as ctrl">
+<h2>{{::ctrl.i18n('customer.overview')}}</h2>
+<button type="button" class="btn btn-primary" ng-click="ctrl.create()">{{::ctrl.i18n('customer.addNew')}}</button>
+<table class="table table-striped">
+    <thead>
+    <th>{{::ctrl.i18n('customerOverview.firstName')}}</th>
+    <th>{{::ctrl.i18n('customerOverview.lastName')}}</th>
+    <th>{{::ctrl.i18n('customerOverview.birthday')}}</th>
+    <th>{{::ctrl.i18n('customerOverview.gender')}}</th>
+    <th>{{::ctrl.i18n('customerOverview.options')}}</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in ctrl.data">
+            <td>{{::item.firstName}}</td>
+            <td>{{::item.lastName}}</td>
+            <td>{{::item.dateOfBirth | age}}</td>
+            <td>{{::item.gender | gender}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" ng-click="ctrl.edit(item.id)">
+                    {{::ctrl.i18n('edit')}}
+                </button>
+                <button type="button" ng-click="ctrl.delete(item.id)" class="btn btn-primary">
+                    {{::ctrl.i18n('delete')}}
+                </button>
+                <button type="button" ng-click="ctrl.navi(item.id)" class="btn btn-success">
+                    {{::ctrl.i18n('navi')}}
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table> </div>
